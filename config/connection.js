@@ -17,4 +17,4 @@ connection.connect(function(err) {
   console.log(`Connected To The Database ${connection.database}`);
 });
 
-module.exports = connection;
+module.exports = connection; 
