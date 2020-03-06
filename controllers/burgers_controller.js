@@ -7,9 +7,26 @@
 
 const express = require("express");
 const burger = require("../models/burger.js");
-const app=express();
+const router = express.Router();
 
-app.get("/",(req,res)=>{
-    res.render("index");
-    
-});
+router.get("/burgers", (req, res) => {
+    burger.all(function(data) {
+
+       
+      console.log("inside controller",data);
+      res.render("index",{burgers: data});
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports=router;

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,18 +12,18 @@
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
      <!-- local CSS fiel -->
-    <link rel="stylesheet" href="public\assets\burger_style.css">
+    <link rel="stylesheet" href="../assets/burger_style.css">
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
     
 </head>
 
-<body>
+<body> --}}
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12" >
                 <div class="justify-content-center">
-                    <img class="rounded mx-auto d-block" src="public\assets\img\burger-img.png" alt="a picture of YUMMY burger !">
+                    <img class="rounded mx-auto d-block" src="./assets/img/burger-img.png" alt="a picture of YUMMY burger !">
 
                 </div>
             </div>
@@ -35,7 +35,14 @@
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <ul class="list-group">
                     <li class="list-group-item active" id="list-burger-title" >List Of Burgers </li>
-                    <li class="list-group-item">turkye burger <button type="button" class="btn btn-outline-danger btn-sm float-right">Devaour it !</button></li>
+
+                    {{#each burgers}}                   
+                            
+                    
+                    <li class="list-group-item">{{this.id}} . {{this.burger_name}}<button type="button" class="btn btn-outline-danger btn-sm float-right">Devaour it !</button></li>
+                    
+                    
+                    {{/each}}
                 </ul>
 
             </div>
@@ -52,9 +59,9 @@
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <ul class="list-group">
                     <li class="list-group-item active" id="list-burger-title">Burgers have been Devoured</li>
-                    <li class="list-group-item">cheez burger</li>
-                    <li class="list-group-item">veggi burger</li>
-                    <li class="list-group-item">awesome burger</li>
+                    <li class="list-group-item">none</li>
+                    <li class="list-group-item">none</li>
+                    <li class="list-group-item">none</li>
                   </ul>
 
             </div>
@@ -68,6 +75,6 @@
         
         </div>
 
-</body>
+{{!-- </body>
 
-</html>
+</html> --}}
