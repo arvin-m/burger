@@ -1,0 +1,19 @@
+body{
+    background-color: #ff5722c4;
+}
+img{
+    margin-top: 30px;
+    width: 20%;
+    height: 70%;
+   
+}
+h1{
+    font-family: 'Concert One', cursive ;
+    color:#8BC34A ;
+    font-size: 85px;
+    margin-bottom: 30px;
+}
+#list-burger-title{
+    background-color: #1b5da3;
+    border-color: #2a6cb2;
+}

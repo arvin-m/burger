@@ -1,5 +1,15 @@
-Inside the burgers_controller.js file, import the following:
+// Inside the burgers_controller.js file, import the following:
 
-Express
-burger.js
-Create the router for the app, and export the router at the end of your file.
+// Express
+// burger.js
+// Create the router for the app, and export the router at the end of your file.
+
+
+const express = require("express");
+const burger = require("../models/burger.js");
+const app=express();
+
+app.get("/",(req,res)=>{
+    res.render("index");
+    
+});
