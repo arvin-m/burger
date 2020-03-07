@@ -17,7 +17,7 @@
                     <li class="list-group-item active" id="list-burger-title" >List Of Burgers </li>
                     {{#each burgers}}   
                     {{#unless this.devoured}}                    
-                    <li class="list-group-item">{{this.id}} . {{this.burger_name}}<button type="button" class="btn btn-outline-danger btn-sm float-right">Devaour it !</button></li>                    
+                    <li class="list-group-item">{{this.id}} . {{this.burger_name}}<button type="button" id="{{this.id}}"  class="btn btn-outline-danger btn-sm float-right devour">Devour it !</button></li>                    
 			  		{{/unless}}
 				    {{/each}}
                 </ul>
@@ -55,6 +55,20 @@
         
         </div>
 
-{{!-- </body>
+<script>
+    $(document).ready(function(){
+        $(".devour").on("click",function(){
+            let id =$(this).attr("id");            
+            console.log("id:",id);
+            $.ajax({
+                 method: "PUT",
+                  url: "/burgers/devoured/"+id
+                  }).then(function(data) {
+                    console.log(data);
+                    
+                  
+                         });
+        });
 
-</html> --}}
+    });
+</script>
