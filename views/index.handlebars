@@ -1,24 +1,4 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eat Da Burger !</title>
-     <!-- Boostrap CSS Link -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-     <!-- jQuery CDN  -->
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-     <!-- local CSS fiel -->
-    <link rel="stylesheet" href="../assets/burger_style.css">
-    <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
-    
-</head>
-
-<body> --}}
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12" >
@@ -35,34 +15,34 @@
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <ul class="list-group">
                     <li class="list-group-item active" id="list-burger-title" >List Of Burgers </li>
-
-                    {{#each burgers}}                   
-                            
-                    
-                    <li class="list-group-item">{{this.id}} . {{this.burger_name}}<button type="button" class="btn btn-outline-danger btn-sm float-right">Devaour it !</button></li>
-                    
-                    
-                    {{/each}}
+                    {{#each burgers}}   
+                    {{#unless this.devoured}}                    
+                    <li class="list-group-item">{{this.id}} . {{this.burger_name}}<button type="button" class="btn btn-outline-danger btn-sm float-right">Devaour it !</button></li>                    
+			  		{{/unless}}
+				    {{/each}}
                 </ul>
 
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <button type="submit" class="btn btn-dark">Submit</button>
-                      
+                <form method="post" action="/burgers/create">    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button type="submit" class="btn btn-dark">Submit</button>                      
+                        </div>
+                        <textarea class="form-control" name="burgerinput" aria-label="With textarea" maxlength = "25" minlength = "3" placeholder="Burger name(max 25 Character)"></textarea>
                     </div>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
-                  </div>
+                </form>
 
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <ul class="list-group">
                     <li class="list-group-item active" id="list-burger-title">Burgers have been Devoured</li>
-                    <li class="list-group-item">none</li>
-                    <li class="list-group-item">none</li>
-                    <li class="list-group-item">none</li>
-                  </ul>
+                    {{#each burgers}}               
+                    {{#if this.devoured}}                    
+                    <li class="list-group-item">{{this.id}} . {{this.burger_name}}</li>                    		  		
+				    {{/if}}
+                    {{/each}}
+                </ul>
 
             </div>
 

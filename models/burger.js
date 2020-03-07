@@ -9,11 +9,20 @@ const orm=require("../config/orm.js");
 let burger={
     all: function(cb) {
         orm.selectAll("burgers", function(res) {
-            
-            console.log("inside the burger.js  ",res)
-          cb(res);
+           console.log("inside the burger.js  ",res)
+           cb(res);
         });
       },
+    putOne: function(value,cb){
+          orm.insertOne(value,function(res){
+            console.log(" new burger inside the burger",res);
+            console.log( "new burger value inside the burger",value);
+            cb(res);
+
+          });
+
+     }
+    
 
 
 
