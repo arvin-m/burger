@@ -3,8 +3,8 @@ const orm=require("../config/orm.js");
 let burger={
     all: function(cb) {
         orm.selectAll("burgers", function(res) {
-           console.log("inside the burger.js  ",res)
-           cb(res);
+          cb(res);
+          
         });
       },
     putOne: function(value,cb){
@@ -16,8 +16,7 @@ let burger={
      },
      update:function(id,cb){
         orm.updateOne("burgers",true,id,function(res){
-        console.log( " burger id :",id);
-        cb(res);
+          cb(res);       
 
        });
        
