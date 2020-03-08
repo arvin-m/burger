@@ -33,15 +33,11 @@ const router = express.Router();
 
   });
 
-
-
-
-
-
-
-
-
-
-
+  router.get("*", (req, res) => {
+    burger.all(function(data) {       
+      console.log("inside controller",data);
+      res.render("index",{burgers: data});
+    });
+  });
 
 module.exports=router;

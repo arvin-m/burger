@@ -1,7 +1,7 @@
 const connection = require("../config/connection.js");
 
 const orm={
-    
+
     selectAll:(tableName, cb)=>{
       
         let queryString = `SELECT * FROM ${tableName} ;`;
@@ -30,6 +30,6 @@ const orm={
     }
 
 
-}
+};
 
  module.exports=orm;

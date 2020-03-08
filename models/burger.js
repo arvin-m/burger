@@ -22,22 +22,6 @@ let burger={
        })
        
       }
-    }
-
-
-
-
-     
-    
-
-
-
-
-
-
-
-
-
-
+    };
 
 module.exports=burger;

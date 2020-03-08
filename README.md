@@ -10,6 +10,7 @@
 
 * This app will store every burger in a database, whether devoured or not.
 
+
 #### Directory for this app
 
 
@@ -50,6 +51,11 @@
         └── main.handlebars
 ```
 
+## How to run this application :
+
+* run npm start (node server.js).
+
+* run npm dev (nodemon server.js).
 
 
 
