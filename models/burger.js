@@ -19,7 +19,7 @@ let burger={
         console.log( " burger id :",id);
         cb(res);
 
-       })
+       });
        
       }
     };

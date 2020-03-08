@@ -12,7 +12,5 @@ app.use(routes);
 
 app.listen(PORT,(err)=>{
     if (err) throw err;
-
     console.log(`You Are Connecting To The Port localhost http://localhost:${PORT}/burgers`);
-
 });

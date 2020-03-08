@@ -25,9 +25,8 @@ const router = express.Router();
   router.put("/burgers/devoured/:id",(req,res)=>{
     let id =req.params.id;
     console.log("id : clicked",id);
-    burger.update(id,function(data){
-      console.log("burger id :",id);
-      
+    burger.update(id,function(data){      
+      console.log("burger id :",id);      
     });
     res.redirect("/burgers");
 
@@ -35,7 +34,6 @@ const router = express.Router();
 
   router.get("*", (req, res) => {
     burger.all(function(data) {       
-      console.log("inside controller",data);
       res.render("index",{burgers: data});
     });
   });

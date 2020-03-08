@@ -21,7 +21,6 @@
 			  		{{/unless}}
 				    {{/each}}
                 </ul>
-
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <form method="post" action="/burgers/create">    
@@ -46,27 +45,24 @@
 
             </div>
 
-
-
-
         </div>       
         
         
-        
-        </div>
+    </div>
 
 <script>
     $(document).ready(function(){
         $(".devour").on("click",function(){
             let id =$(this).attr("id");            
             console.log("id:",id);
-            $.ajax({
-                 method: "PUT",
-                  url: "/burgers/devoured/"+id
-                  }).then(function(data) {
-                    console.log(data);                    
+            $.ajax(`/burgers/devoured/${id}`,{
+                method: "PUT",
+                data:id
+                }).then(function(data) {
+                    console.log("inside AJAX",data);  
+                    location.reload();                  
                   
-                    });
+                });
         });
 
     });

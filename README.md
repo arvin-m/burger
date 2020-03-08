@@ -53,9 +53,9 @@
 
 ## How to run this application :
 
-* run npm start (node server.js).
+* npm run start (node server.js).
 
-* run npm dev (nodemon server.js).
+* npm run dev (nodemon server.js).
 
 
 
