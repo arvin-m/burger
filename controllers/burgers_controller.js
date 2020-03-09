@@ -27,7 +27,7 @@ const router = express.Router();
     burger.update(id,function(data){      
               
     });
-    res.redirect("/burgers");
+    // res.redirect("/burgers");
 
   });
 
